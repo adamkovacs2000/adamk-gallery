@@ -4,7 +4,7 @@ services:
     container_name: adamk-gallery
     restart: unless-stopped
     ports:
-      - "3000:80"  # Change port as needed
+      - "50000:80"  # Change port as needed
     environment:
       - TZ=Europe/Berlin
     volumes:

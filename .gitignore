@@ -4,3 +4,4 @@ resources/
 .hugo_build.lock
 hugo_stats.json
 #content/**/*.jpg
+*.log

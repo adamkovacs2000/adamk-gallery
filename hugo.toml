@@ -1,3 +1,82 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://adamk.hu/'
+
+copyright = "© Adam Kovacs"
+defaultContentLanguage = "en"
+disableKinds = ["taxonomy"]
+enableRobotsTXT = true
+languageCode = "en"
+timeZone = "Europe/Berlin"
+timeout = "120s"
+title = "Ádám Kovács"
+
+[params]
+  defaultTheme = "dark"
+  #description = "Personal gallery"
+  title = "Gallery by Ádám Kovács"
+  [params.author]
+    #email = "user@example.com"
+    name = "Ádám Kovács"
+  [params.socialIcons]
+    #facebook = "https://www.facebook.com/"
+    instagram = "https://www.instagram.com/adamkovacsphoto/"
+    github = "https://github.com/adamkovacs2000/"
+    youtube = "https://www.youtube.com/@adamkovacs"
+    #email = "mailto:user@example.com"
+    #website = "https://example.com"
+    #500px = "https://500px"
+    #whatsapp = "1234567890"
+  [params.gallery]
+    #boxSpacing = 10
+    #targetRowHeight = 288
+    #targetRowHeightTolerance = 0.25
+
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+[imaging]
+  quality = 80
+  resampleFilter = "CatmullRom"
+  [imaging.exif]
+    disableDate = false
+    disableLatLong = true
+    #includeFields = "ImageDescription|Orientation"
+    #excludeFields = ""
+
+[module]
+  [module.hugoVersion]
+    min = "0.121.2"
+  [[module.imports]]
+    path = "gallery"
+
+[menu]
+  #[[menu.footer]]
+  #  name = "GitHub"
+  #  url = "https://github.com/adamkovacs2000/"
+  #  weight = 3
+
+[services]
+  [services.rss]
+    limit = 100
+
+[related]
+  #includeNewer = true
+  threshold = 10
+  toLower = false
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'categories'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 10
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'keywords'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 5

@@ -1,0 +1,30 @@
+# Watermark Configuration File
+# 
+# This file controls watermark placement and appearance for each image.
+#
+# Position options:
+#   x: 'left', 'center', 'right', or numeric pixel value
+#   y: 'top', 'middle', 'bottom', or numeric pixel value
+#
+# Other options:
+#   opacity
+#   watermark_size: Scale factor for watermark (1.0 = original size)
+
+# Default settings applied to all images (can be overridden per file)
+defaults:
+  x: center
+  y: bottom
+  opacity: 0.6
+  watermark_target_percentage: 0.1 # Target watermark size as percentage of image diagonal
+  # watermark_size: 1.0
+
+# Per-file settings (override defaults)
+files:
+  20230812_123902_Italy_S23-Edit.jpg:
+    y: top
+    opacity: 0.8
+  20240801_130855_Crete_02139.jpg:
+    y: top
+  20240801_161113_Crete_02189_Edit.jpg:
+    y: top
+

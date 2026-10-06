@@ -44,6 +44,7 @@ title = "Ádám Kovács"
     #includeFields = "ImageDescription|Orientation"
     #excludeFields = ""
 
+#theme = "gallery" # use this with git submodule method
 [module]
   [module.hugoVersion]
     min = "0.121.2"
@@ -51,10 +52,10 @@ title = "Ádám Kovács"
     path = "gallery"
 
 [menu]
-  #[[menu.footer]]
-  #  name = "GitHub"
-  #  url = "https://github.com/adamkovacs2000/"
-  #  weight = 3
+  [[menu.footer]]
+    name = "About" 
+    url = "/about/"
+    weight = 1
 
 [services]
   [services.rss]

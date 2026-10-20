@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Aurora
 categories: ["nature"]
 weight: 3

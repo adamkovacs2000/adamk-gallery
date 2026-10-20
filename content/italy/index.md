@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Italy
 categories: ["travel"]
 weight: 3

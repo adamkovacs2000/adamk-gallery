@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Croatia
 categories: ["travel"]
 weight: 3

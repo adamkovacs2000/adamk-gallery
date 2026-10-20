@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Sweden
 categories: ["travel"]
 weight: 3

@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Slovenia
 categories: ["travel"]
 weight: 3

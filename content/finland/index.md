@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Finland
 categories: ["travel"]
 weight: 3

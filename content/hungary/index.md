@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Hungary
 categories: ["travel"]
 weight: 3

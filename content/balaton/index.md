@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Balaton
 categories: ["travel"]
 weight: 3

@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Austria
 categories: ["travel"]
 weight: 3

@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Spain
 categories: ["travel"]
 weight: 3

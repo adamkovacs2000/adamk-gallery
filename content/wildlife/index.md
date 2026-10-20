@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Wildlife
 categories: ["Nature"]
 weight: 3

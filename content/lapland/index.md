@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Lapland
 categories: ["travel"]
 weight: 3

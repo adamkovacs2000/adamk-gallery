@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Lofoten
 categories: ["travel"]
 weight: 2

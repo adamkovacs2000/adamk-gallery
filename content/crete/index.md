@@ -1,6 +1,5 @@
 ---
 description: 
-menus: "main"
 title: Crete
 categories: ["travel"]
 weight: 3

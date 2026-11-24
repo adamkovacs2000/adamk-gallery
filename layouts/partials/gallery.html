@@ -1,6 +1,7 @@
 <section class="gallery">
   <div id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
     {{ $images := slice }}
+    {{ $order := .Params.sort_order | default "asc" }}
     {{ range $image := where (.Resources.ByType "image") "Params.hidden" "ne" true }}
       {{ $title := "" }}
       {{ $date := "" }}
@@ -25,11 +26,22 @@
         "Date" $date
         "image" $image
         "Params" $image.Params
+        "SortKey" (printf "%06d_%s" (int ($image.Params.weight | default 0)) $image.Name)
         )
       }}
     {{ end }}
     {{ $publishResources := default true .Params.build.publishResources }}
-    {{ range sort $images (.Params.sort_by | default "Name") (.Params.sort_order | default "asc") }}
+    {{ $sorted := slice }}
+    {{ if eq .Params.sort_by "Params.weight" }}
+      {{/* Weighted images first, always ascending by weight (then by name).
+           Images without a weight follow, sorted by name using sort_order. */}}
+      {{ $weighted := where $images "Params.weight" "ne" nil }}
+      {{ $unweighted := where $images "Params.weight" "eq" nil }}
+      {{ $sorted = (sort $weighted "SortKey" "asc") | append (sort $unweighted "Name" $order) }}
+    {{ else }}
+      {{ $sorted = sort $images (.Params.sort_by | default "Name") $order }}
+    {{ end }}
+    {{ range $sorted }}
       {{ $image := .image }}
       {{ $thumbnail := $image.Filter (slice images.AutoOrient (images.Process "fit 600x600")) }}
       {{ $full := $image.Filter (slice images.AutoOrient (images.Process "fit 2560x2560")) }}

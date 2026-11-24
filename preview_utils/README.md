@@ -15,16 +15,16 @@ A Python script for creating watermarked image previews with configurable waterm
 
 ## Requirements
 
-Install required dependencies:
+Dependencies are listed in [pyproject.toml](pyproject.toml) and managed with [uv](https://docs.astral.sh/uv/). From the `preview_utils` folder, `uv run` creates the `.venv` and installs the packages automatically on first use:
 
-```powershell
-pip install Pillow PyYAML svglib reportlab
+```bash
+uv run python preview_generator.py --help
 ```
 
-Or use the requirements file:
+To set up the environment explicitly without running anything:
 
-```powershell
-pip install -r requirements.txt
+```bash
+uv sync
 ```
 
 ## Usage
@@ -33,8 +33,8 @@ pip install -r requirements.txt
 
 First, generate a configuration template from your input folder:
 
-```powershell
-python watermark_previews.py --generate-template --input "C:\path\to\input" --template-output config.yaml
+```bash
+uv run python preview_generator.py --generate-template --input input --template-output config.yaml
 ```
 
 This will scan the input folder for JPG images and create a YAML file with default settings for each image.
@@ -66,38 +66,38 @@ files:
 
 ### 3. Process Images
 
-Run the script to process all images:
+Run the script to process all images (all options have defaults, so `uv run python preview_generator.py` alone also works):
 
-```powershell
-python watermark_previews.py --input "C:\path\to\input" --output "C:\path\to\output" --config config.yaml --watermark watermark.svg
+```bash
+uv run python preview_generator.py --input input --output output --config config.yaml --watermark watermark.svg
 ```
 
 Or use a PNG watermark:
 
-```powershell
-python watermark_previews.py --input "C:\path\to\input" --output "C:\path\to\output" --config config.yaml --watermark watermark.png
+```bash
+uv run python preview_generator.py --input input --output output --config config.yaml --watermark watermark.png
 ```
 
 ## Command Line Arguments
 
 ### Generate Template Mode
-```powershell
-python watermark_previews.py --generate-template --input <folder> [--template-output <file>]
+```bash
+uv run python preview_generator.py --generate-template --input <folder> [--template-output <file>]
 ```
 
 - `--generate-template`: Generate YAML template from input folder
-- `--input, -i`: Input folder containing JPG images (required)
+- `--input`: Input folder containing JPG images (default: `input`)
 - `--template-output`: Output path for template (default: config_template.yaml)
 
 ### Process Mode
-```powershell
-python watermark_previews.py --input <folder> --output <folder> --config <file> --watermark <file>
+```bash
+uv run python preview_generator.py --input <folder> --output <folder> --config <file> --watermark <file>
 ```
 
-- `--input, -i`: Input folder containing JPG images (required)
-- `--output, -o`: Output folder for processed images (required)
-- `--config, -c`: YAML configuration file (required)
-- `--watermark, -w`: Watermark file - supports SVG or PNG (required)
+- `--input`: Input folder containing JPG images (default: `input`)
+- `--output`: Output folder for processed images (default: `output`)
+- `--config`: YAML configuration file (default: `config.yaml`)
+- `--watermark`: Watermark file, SVG or PNG (default: `signature_script_kovacsadam.png`)
 
 ## Configuration Options
 
@@ -144,9 +144,9 @@ All other metadata (including GPS, camera serial numbers, etc.) is stripped.
 
 1. Place your JPG images in an input folder
 2. Create an SVG watermark file
-3. Generate template: `python watermark_previews.py --generate-template -i input_folder`
-4. Edit the generated `config_template.yaml` to customize positions
-5. Process images: `python watermark_previews.py -i input_folder -o output_folder -c config_template.yaml -w watermark.svg`
+3. Generate template: `uv run python preview_generator.py --generate-template --input input --template-output config.yaml`
+4. Edit the generated `config.yaml` to customize positions
+5. Process images: `uv run python preview_generator.py --input input --output output --config config.yaml --watermark watermark.png`
 
 ## Output
 

@@ -1,0 +1,15 @@
+[project]
+name = "preview-utils"
+version = "0.1.0"
+description = "Watermarked image preview generator"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "Pillow",
+    "PyYAML",
+    "svglib",
+    "reportlab",
+]
+
+[tool.uv]
+package = false

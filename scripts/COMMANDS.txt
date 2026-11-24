@@ -1,0 +1,6 @@
+COPY ALL METADATA:
+
+exiftool -TagsFromFile source.jpg target.jpg
+
+exiftool -TagsFromFile 20250524_160741_Tampere_04512.ARW x.jpg
+

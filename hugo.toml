@@ -52,6 +52,14 @@ title = "Ádám Kovács"
     path = "gallery"
 
 [menu]
+  [[menu.main]]
+    name = "Nature"
+    url = "/categories/nature/"
+    weight = 1
+  [[menu.main]]
+    name = "Travel"
+    url = "/categories/travel/"
+    weight = 2
   [[menu.footer]]
     name = "About" 
     url = "/about/"

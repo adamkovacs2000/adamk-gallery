@@ -1,0 +1,46 @@
+/* custom.css */
+
+/* White border around the photo in the lightbox
+   (--lightbox-border and the placeholder border are set in lightbox.js) */
+.pswp__img {
+  box-shadow: 0 0 0 var(--lightbox-border, 6px) #fff;
+}
+
+.pswp--zoomed-in .pswp__img {
+  box-shadow: none;
+}
+
+/* Blurred copy of the current photo as lightbox background (image set in lightbox.js, desktop only) */
+.pswp--blur-bg .pswp__bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(40px) brightness(0.5);
+  transform: scale(1.15);
+}
+
+/* Info button: dimmed while the caption is hidden */
+.pswp__button--info-button[aria-pressed="false"] {
+  opacity: 0.5;
+}
+
+/* Tighter page title block (theme defaults: gap 1.5rem, margin-bottom 3rem/4rem, header margin-bottom 2rem/3rem) */
+hgroup {
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  hgroup {
+    margin-bottom: 2rem;
+  }
+
+  body > header {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Category links are in the main menu instead (hugo.toml [[menu.main]]) */
+.categories {
+  display: none;
+}
